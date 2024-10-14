@@ -1,23 +1,38 @@
-$(document).ready(function () {
+$(document).ready(() => {
+    var numColumnas = 4;
 
-    $(document).on("click", "#btn-add-row", function () {
-        var row = "<tr><td>Nuevo</td></tr>";
-        $("#table").append(row);
+    $(document).on("click", ".btn-add-fila", function () {
+        let html = $("tbody tr:last-child").html();
+        $("tbody:last-child").append(`<tr>${html}</tr>`);
     });
 
-    $(document).on("click", "#btn-add-column", function () {
-        $("#table tr").each(function () {
-            $(this).append("<td>Nuevo</td>");
-        });
+    $(document).on("click", ".btn-add-col", function () {
+        $("thead tr:last-child").append("<th>Email</th");
+        $("tbody tr td:last-child").remove();
+        $("tbody tr").append(
+            "<td>vasili</td> <td> <button class='btn btn-danger btn-del-fila'>Borrar fila</button> </td>"
+        );
     });
 
-    $(document).on("click", "#btn-delete-row", function () {
-        $("#table tr:last").remove();
+    $(document).on("click", "#btn-del-col", function () {
+        $("td:last-child").prev().remove();
+        $("th:last-child").remove();
     });
 
-    $(document).on("click", "#btn-delete-column", function () {
-        $("#table tr").each(function () {
-            $(this).children().last().remove();
-        });
+    $(document).on("click", ".btn-del-col", function () {
+        var columnid = $(this).attr("columnid");
+        $(".cell-col-" + columnid).remove();
+        numColumnas--;
+    });
+
+    $(document).on("click", ".btn-del-fila", function () {
+        var idElemento = $(this).attr("itemid");
+        $(this).parent().parent().remove();
+    });
+
+    $(document).on("click", ".showHideColumn", function () {
+        var columnid = $(this).attr("columnid");
+        var selectorCheck = ".cell-col-" + columnid;
+        $(this).prop("checked") ? $(selectorCheck).show() : $(selectorCheck).hide();
     });
 });
