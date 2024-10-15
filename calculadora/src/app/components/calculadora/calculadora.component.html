@@ -1,31 +1,35 @@
-<div class="display-container">
-
+<div class="display-container" style="font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 20px;">
+    <p>{{num1}} {{operacion}} {{num2}} = {{resultado}}</p>
 </div>
 
-<div class="button-container">
+<div class="button-container" style="font-size: 24px; font-weight: bold; text-align: center">
     <div>
-        <button (click)="addNum(1)" mat-raised-button class="calc-button">1</button>
-        <button (click)="addNum(2)" mat-raised-button class="calc-button">2</button>
-        <button (click)="addNum(3)" mat-raised-button class="calc-button">3</button>
+        <button (click)="guardar(1)" mat-raised-button class="calc-button">1</button>
+        <button (click)="guardar(2)" mat-raised-button class="calc-button">2</button>
+        <button (click)="guardar(3)" mat-raised-button class="calc-button">3</button>
     </div>
     <div>
-        <button (click)="addNum(4)" mat-raised-button class="calc-button">4</button>
-        <button (click)="addNum(5)" mat-raised-button class="calc-button">5</button>
-        <button (click)="addNum(6)" mat-raised-button class="calc-button">6</button>
+        <button (click)="guardar(4)" mat-raised-button class="calc-button">4</button>
+        <button (click)="guardar(5)" mat-raised-button class="calc-button">5</button>
+        <button (click)="guardar(6)" mat-raised-button class="calc-button">6</button>
     </div>
     <div>
-        <button (click)="addNum(7)" mat-raised-button class="calc-button">7</button>
-        <button (click)="addNum(8)" mat-raised-button class="calc-button">8</button>
-        <button (click)="addNum(9)" mat-raised-button class="calc-button">9</button>
+        <button (click)="guardar(7)" mat-raised-button class="calc-button">7</button>
+        <button (click)="guardar(8)" mat-raised-button class="calc-button">8</button>
+        <button (click)="guardar(9)" mat-raised-button class="calc-button">9</button>
     </div>
     <div>
-        <button mat-raised-button class="calc-button" style="visibility: hidden;"></button>
-        <button (click)="addNum(0)" mat-raised-button class="calc-button">0</button>
+        <button (click)="guardar(0)" mat-raised-button class="calc-button">0</button>
     </div>
     <br />
     <div>
         <button (click)="sumar()" mat-raised-button class="calc-button">+</button>
         <button (click)="restar()" mat-raised-button class="calc-button">-</button>
-        <button (click)="result()" mat-raised-button class="calc-button">=</button>
+        <button (click)="mostrarResultado()" mat-raised-button class="calc-button">=</button>
+    </div>
+    <div>
+        <button mat-raised-button (click)="delete()">
+            <mat-icon>delete</mat-icon>
+        </button>
     </div>
 </div>
