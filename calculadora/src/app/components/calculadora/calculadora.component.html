@@ -1,0 +1,31 @@
+<div class="display-container">
+
+</div>
+
+<div class="button-container">
+    <div>
+        <button (click)="addNum(1)" mat-raised-button class="calc-button">1</button>
+        <button (click)="addNum(2)" mat-raised-button class="calc-button">2</button>
+        <button (click)="addNum(3)" mat-raised-button class="calc-button">3</button>
+    </div>
+    <div>
+        <button (click)="addNum(4)" mat-raised-button class="calc-button">4</button>
+        <button (click)="addNum(5)" mat-raised-button class="calc-button">5</button>
+        <button (click)="addNum(6)" mat-raised-button class="calc-button">6</button>
+    </div>
+    <div>
+        <button (click)="addNum(7)" mat-raised-button class="calc-button">7</button>
+        <button (click)="addNum(8)" mat-raised-button class="calc-button">8</button>
+        <button (click)="addNum(9)" mat-raised-button class="calc-button">9</button>
+    </div>
+    <div>
+        <button mat-raised-button class="calc-button" style="visibility: hidden;"></button>
+        <button (click)="addNum(0)" mat-raised-button class="calc-button">0</button>
+    </div>
+    <br />
+    <div>
+        <button (click)="sumar()" mat-raised-button class="calc-button">+</button>
+        <button (click)="restar()" mat-raised-button class="calc-button">-</button>
+        <button (click)="result()" mat-raised-button class="calc-button">=</button>
+    </div>
+</div>
