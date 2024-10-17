@@ -7,19 +7,19 @@ import { Component, Input } from '@angular/core';
 })
 export class BarraProgresoComponent {
 
-  @Input() value: number = 90;
+  @Input() value: number = 0;
   @Input() color: string = '';
 
-  getProgressBarType(value: number): string {
-    if (value < 25) {
+  getProgressColor(value: number): string {
+    if (value <= 25) {
       return this.color = 'danger';
-    } else if (value < 50) {
+    } else if (value <= 50) {
       return this.color = 'warning';
-    } else if (value < 75) {
+    } else if (value <= 75) {
       return this.color = 'info';
     } else {
       return this.color = 'success';
     }
   }
-
+  
 }
