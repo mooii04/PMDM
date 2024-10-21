@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Vehicles } from '../../interfaces/vehicles.interfaces';
+import { Vehicles, VehiclesResponse } from '../../models/vehicles.interfaces';
 import { StarWarsVehiclesService } from '../../services/star-wars-vehicles.service';
 
 @Component({
@@ -16,8 +16,8 @@ export class VehiclesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.vehiclesService.getVehiclesList().subscribe((respuesta: Vehicles[]) => {
-      this.listadoVehiculos = respuesta;
+    this.vehiclesService.getVehiclesList().subscribe(respuesta => {
+      this.listadoVehiculos = respuesta.results; 
     });
   }
 
