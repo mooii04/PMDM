@@ -21,4 +21,11 @@ export class VehiclesComponent implements OnInit {
     });
   }
 
+  generateVehiclePhoto(url : string){
+
+    const id = url.split('/').filter(segment => segment).pop();
+
+    return `https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`
+  }
+
 }

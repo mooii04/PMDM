@@ -21,4 +21,11 @@ export class PeopleListComponent implements OnInit {
     });
   }
 
+  generatePeoplePhoto(url : string){
+
+    const id = url.split('/').filter(segment => segment).pop();
+
+    return `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`
+  }
+
 }
