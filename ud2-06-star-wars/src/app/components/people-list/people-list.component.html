@@ -1,0 +1,24 @@
+<div class="row">
+    @for(item of listadoPersonas; track item.name){
+    <div class="col-md-3 col-12 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5">{{ item.name }}</h2>
+                <h4 class="h6">{{ item.gender }}</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Height:</strong> {{ item.height }}</p>
+                <p><strong>Mass:</strong> {{ item.mass }}</p>
+                <p><strong>Hair Color:</strong> {{ item.hair_color }}</p>
+                <p><strong>Skin Color:</strong> {{ item.skin_color }}</p>
+                <p><strong>Eye Color:</strong> {{ item.eye_color }}</p>
+                <p><strong>Birth Year:</strong> {{ item.birth_year }}</p>
+                <p><strong>Homeworld:</strong> {{ item.homeworld }}</p>
+                <p><strong>Created:</strong> {{ item.created }}</p>
+                <p><strong>Edited:</strong> {{ item.edited }}</p>
+                <p><strong>URL:</strong> <a [href]="item.url" class="text-decoration-none">{{ item.url }}</a></p>
+            </div>
+        </div>
+    </div>
+}
+</div>
