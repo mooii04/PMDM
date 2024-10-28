@@ -3,9 +3,11 @@ export interface PokemonBattleResponse {
     next: string
     previous: any
     results: PokemonList[]
-}
-
-export interface PokemonList {
+  }
+  
+  export interface PokemonList {
+    hp: number
     name: string
     url: string
-}
+  }
+  
