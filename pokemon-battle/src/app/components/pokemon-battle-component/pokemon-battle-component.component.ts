@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
-import { PokemonBattleResponse, PokemonList } from '../../models/pokemon-battle.interface';
+import { PokemonList } from '../../models/pokemon-battle.interface';
+
 
 @Component({
   selector: 'app-pokemon-battle-component',
@@ -11,14 +12,13 @@ export class PokemonBattleComponentComponent implements OnInit {
 
   listadoPokemon: PokemonList[] = [];
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService) {
+  }
 
   ngOnInit(): void {
-    this.pokemonService.getPokemon().subscribe((response: PokemonBattleResponse) => {
+    this.pokemonService.getPokemon().subscribe((response) => {
       this.listadoPokemon = response.results;
     });
   }
 
-
-  
 }
