@@ -7,30 +7,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BattleComponent } from './pages/battle/battle.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { provideHttpClient } from '@angular/common/http';
-import { LottieComponent } from 'ngx-lottie';
+import { LottieComponent, provideLottieOptions } from 'ngx-lottie';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BattleComponent,
-    PokemonComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    LottieComponent
-  ],
+  declarations: [AppComponent, BattleComponent, PokemonComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, LottieComponent, FormsModule],
   providers: [
     provideHttpClient(),
     provideLottieOptions({
       player: () => import('lottie-web'),
     }),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-function provideLottieOptions(arg0: { player: () => Promise<typeof import("lottie-web")>; }): import("@angular/core").Provider | import("@angular/core").EnvironmentProviders {
-  throw new Error('Function not implemented.');
-}
-
+export class AppModule {}

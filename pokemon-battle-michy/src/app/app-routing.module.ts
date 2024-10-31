@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { BattleComponent } from './pages/battle/battle.component';
 
 const routes: Routes = [
-  { path: 'battle', component: BattleComponent},
-  { path: '', redirectTo: 'battle', pathMatch: 'full'}
+  { path: 'battle', component: BattleComponent },
+  { path: '', redirectTo: '/battle', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
